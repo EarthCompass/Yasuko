@@ -6,10 +6,8 @@
 {{! Everything inside the #post tags pulls data from the post }}
 {{#post}}
     {{#if feature_image}}
-    <img src="{{feature_image}}!wechatsmall" class="wechat-only">
+    <img src="{{feature_image}}" class="wechat-only">
     <header id="header" class="home-header blog-background banner-mask lazy" data-url="{{feature_image}}">
-    {{else}}
-    <header id="header" class="home-header blog-background banner-mask lazy" data-url="https://luoleiorg.b0.upaiyun.com/tmp/yasuko/yasuko.jpg" style="background-image:no-cover">
     {{/if}}
 
         <div class="nav-header">
@@ -101,7 +99,7 @@
                 <a class="icon-share icon-github" href="https://github.com/EarthCompass">
                     <span class=""><i class="iconfont  iconfont-github">&#xe60d;</i></span>
                 </a>
-                <a class="icon-share icon-weibo" href="#">
+                <a class="icon-share icon-weibo" href=zhihulink>
                     <span class=""><i class="iconfont  iconfont-zhihu">&#xe609;</i></span>
                 </a>
             </div>
