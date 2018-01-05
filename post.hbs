@@ -86,20 +86,20 @@
 
           <section class="share">
             <div class="share-icons" id="share-icons">
-               <a class="icon-share" href="#">
+               <a class="icon-share" href="#" id="weibo_link">
                     <span class=""><i class="iconfont iconfont-weibo">&#xe607;</i></span>
                 </a>
 
-                <a class="icon-share" href="#">
+                <a class="icon-share" href="{{twitter_url}}">
                     <span class=""><i class="iconfont iconfont-twitter">&#xe604;</i></span>
                 </a>
-                <a class="icon-share" href="#">
+                <a class="icon-share" href="#" id="instagarm_link">
                     <span class=""><i class="iconfont  iconfont-instagram">&#xe603;</i></span>
                 </a>
-                <a class="icon-share icon-github" href="https://github.com/EarthCompass">
+                <a class="icon-share icon-github" href="#" id="github_link">
                     <span class=""><i class="iconfont  iconfont-github">&#xe60d;</i></span>
                 </a>
-                <a class="icon-share icon-weibo" href="#">
+                <a class="icon-share icon-weibo" href="#" id="zhihu_link">
                     <span class=""><i class="iconfont  iconfont-zhihu">&#xe609;</i></span>
                 </a>
             </div>
@@ -128,4 +128,10 @@
 </section>
 
 <script type="text/javascript" src="{{asset "js/prism.js"}}"></script>
+<script>
+$('#weibo_link').attr('href',weibo_link);
+$('#instagarm_link').attr('href',instagarm_link);
+$('#github_link').attr('href',github_link);
+$('#zhihu_link').attr('href',zhihu_link);
+</script>
 {{/post}}
