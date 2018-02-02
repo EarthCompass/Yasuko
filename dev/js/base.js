@@ -123,7 +123,7 @@ var General = {
             },
             custom: {
                 families: ['Exo', 'iconfont'],
-                urls: [General.absUrl + '/assets/css/font.min.css']
+                urls: [General.absUrl + '/assets/css/font.min.css','https://disqus.earthc.moe/dist/iDisqus.min.css']
             }
         };
         loadJS(General.absUrl + '/assets/js/webfont.js', function() {
@@ -205,6 +205,25 @@ var General = {
 
         return _output;
     },
+	
+	    // 获得路径中的domain
+    extractHostname: function(url) {
+        var hostname;
+        //find & remove protocol (http, ftp, etc.) and get hostname
+
+        if (url.indexOf("://") > -1) {
+            hostname = url.split('/')[2];
+        } else {
+            hostname = url.split('/')[0];
+        }
+        //find & remove port number
+        hostname = hostname.split(':')[0];
+        //find & remove "?"
+        hostname = hostname.split('?')[0];
+
+        return hostname;
+    },
+
     addIcons: function() {
         /*给博客文章地址url添加ico识别*/
         $('.single-post-inner  a:not(:has(img))').each(function(i) {
@@ -277,25 +296,17 @@ var General = {
         var dataThreadKey = GlobalConfigue.masterDomain + location.pathname;
         $(window).scroll(function() {
             if ($('.author-image').isOnScreenVisible() && !$('.author-image').hasClass('comment-loaded')) {
-
-                var d = document,
-                    s = d.createElement('script');
-
-                s.src = 'https://luoleiorg.disqus.com/embed.js';
-
-                s.setAttribute('data-timestamp', +new Date());
-                // (d.head || d.body).appendChild(s);
-
-                // if (General.viewWidth > 960) {
-                loadJS('https://luoleiorg.disqus.com/embed.js', function() {
-                        $('.author-image').addClass('comment-loaded');
-                        DISQUS.reset({
-                            reload: true,
-                            config: function() {
-                                this.page.identifier = dataThreadKey
-                                this.page.url = dataThreadKey
-                            }
-                        });
+				$('.author-image').addClass('comment-loaded');
+                loadJS('https://disqus.earthc.moe/dist/iDisqus.min.js', function() {
+                    var disq = new iDisqus('disqus_comment', {
+                        forum: 'blog-earthc-moe',
+                        api: 'https://disqus.earthc.moe/api',
+                        site: 'https://blog.earthc.moe',
+                        mode: 3,
+                        timeout: 200,
+                        init: true,
+                        auto: true
+                    });
                     })
                     // }
             }
