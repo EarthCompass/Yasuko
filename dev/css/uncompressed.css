@@ -1009,7 +1009,7 @@ h1
 
 .home-template #main,
 .archive-template #main,
-.author-template #main #main
+.author-template #main
 {
     max-width: 76.8rem;
 }

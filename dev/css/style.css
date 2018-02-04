@@ -728,7 +728,7 @@ h1 {
   font-size: 0;
   display: block; }
 
-.home-template #main, .archive-template #main, .author-template #main #main {
+.home-template #main, .archive-template #main, .author-template #main {
   max-width: 76.8rem; }
 
 .post-template #main {
