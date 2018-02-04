@@ -1008,7 +1008,8 @@ h1
 }
 
 .home-template #main,
-.archive-template #main
+.archive-template #main,
+.author-template #main #main
 {
     max-width: 76.8rem;
 }
@@ -1084,7 +1085,8 @@ h1
 
 .home-template #main,
 .archive-template #main,
-.tag-template #main
+.tag-template #main,
+.author-template #main
 {
     margin: 2rem auto;
 }
