@@ -302,7 +302,7 @@ var General = {
                         forum: 'blog-earthc-moe',
                         api: 'https://disqus.earthc.moe/api',
                         site: 'https://blog.earthc.moe',
-                        mode: 3,
+                        mode: 1,
                         timeout: 200,
                         init: true,
                         auto: true
